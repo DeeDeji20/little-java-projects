@@ -39,6 +39,6 @@ class InventoryTest {
 
         Guitar searchGuitar = new Guitar("2", 2.40, "pet", "v1231", "acoustic", "debsWood", "estasWood");
         Guitar guitar = inventory.search(searchGuitar);
-        assertEquals("2", guitar.getSerialNumber());
+        assertEquals("2", searchGuitar.getSerialNumber());
     }
 }
