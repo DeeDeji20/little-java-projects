@@ -18,6 +18,6 @@ class InventoryTest {
     @Test
     public void testThatGuitarCanBeAddedToInventory(){
         inventory.addGuitar("123", 2.30, "rick", "v1230", "electric", "lotasWood", "otunbaWood");
-
+        assertEquals(1, inventory.getGuitars().size());
     }
 }
