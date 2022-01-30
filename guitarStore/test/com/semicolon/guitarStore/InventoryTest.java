@@ -15,4 +15,9 @@ class InventoryTest {
     public void testThatClassIsCreated(){
         assertNotNull(inventory);
     }
+    @Test
+    public void testThatGuitarCanBeAddedToInventory(){
+        inventory.addGuitar("123", 2.30, "rick", "v1230", "electric", "lotasWood", "otunbaWood");
+
+    }
 }
