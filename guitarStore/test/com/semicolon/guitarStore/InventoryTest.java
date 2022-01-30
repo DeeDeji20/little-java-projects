@@ -32,12 +32,13 @@ class InventoryTest {
     }
 
     @Test
-    public void testThatUserCanGetAGuitar(){
+    public void testThatUserCanSearchforAGuitar(){
         inventory.addGuitar("1", 2.30, "rick", "v1230", "electric", "lotasWood", "otunbaWood");
         inventory.addGuitar("2", 2.40, "pet", "v1231", "acoustic", "debsWood", "estasWood");
         inventory.addGuitar("3", 2.50, "mich", "v1232", "electric", "petWood", "sobaWood");
 
-        Guitar searchGuitar = new Guitar();
-        Guitar guitar = inventory.search(Guitar);
+        Guitar searchGuitar = new Guitar("2", 2.40, "pet", "v1231", "acoustic", "debsWood", "estasWood");
+        Guitar guitar = inventory.search(searchGuitar);
+        assertEquals("2", guitar.getSerialNumber());
     }
 }

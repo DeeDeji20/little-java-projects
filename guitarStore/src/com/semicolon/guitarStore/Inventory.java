@@ -21,4 +21,11 @@ public class Inventory {
         }
         return null;
     }
+
+    public Guitar search(Guitar desiredGuitar) {
+        for (Guitar guitar : guitars) {
+            if (guitar.equals(desiredGuitar)) return guitar;
+        }
+        return null;
+    }
 }
