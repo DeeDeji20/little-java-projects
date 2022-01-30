@@ -1,6 +1,6 @@
 package com.semicolon.guitarStore;
 
-public class Guitars {
+public class Guitar {
     private String serialNumber;
     private double price;
     private String builder;
@@ -9,7 +9,7 @@ public class Guitars {
     private String backwood;
     private String topwood;
 
-    public Guitars(String serialNumber, double price, String builder, String model, String type, String backwood, String topwood) {
+    public Guitar(String serialNumber, double price, String builder, String model, String type, String backwood, String topwood) {
         this.serialNumber = serialNumber;
         this.price = price;
         this.builder = builder;
