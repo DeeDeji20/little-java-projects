@@ -53,11 +53,11 @@ public class Diary {
     }
 
     public void deleteGistFromLiist(String titleOfGistToBeDeleted, String secreteKey) {
-//        if (secreteKey.equals(password)){
+        if (secreteKey.equals(password)){
             for (Gist gist : gists) {
                 if (gist.getTitle().equals(titleOfGistToBeDeleted)) gists.remove(gist);
             }
-//        }
-//        else throw new IllegalArgumentException("Invalid password to access gists");
+        }
+        else throw new IllegalArgumentException("Invalid password to access gists");
     }
 }

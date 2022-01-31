@@ -42,7 +42,7 @@ class DiaryTest {
         diary.addNewGist("My third gist", "Amebo, rest!!...", "1234");
         assertEquals(3, diary.getGists().size());
 
-        diary.deleteGistFromLiist("My second gist", "Dee");
+        diary.deleteGistFromLiist("My second gist", "1234");
         System.out.println(diary.getGists());
         assertEquals(2, diary.getGists().size());
 
