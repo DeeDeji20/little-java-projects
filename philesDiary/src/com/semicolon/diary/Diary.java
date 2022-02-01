@@ -60,4 +60,10 @@ public class Diary {
         }
         else throw new IllegalArgumentException("Invalid password to access gists");
     }
+
+
+    public ArrayList<Gist> viewAllGist(String secreteKey) {
+        if (!secreteKey.equals(password)) throw new IllegalArgumentException("Invalid password");
+        return gists;
+    }
 }
