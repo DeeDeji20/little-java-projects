@@ -73,4 +73,9 @@ class DiaryTest {
 
         assertThrows(IllegalArgumentException.class, ()->diary.viewAllGist("dee"));
     }
+
+    @Test
+    public void testThatAllAGistCanBeMarkedAsHotGist(){
+
+    }
 }
