@@ -22,4 +22,13 @@ public class CheckOutSystemTest {
         checkOutSystem.setProductName("Rice");
         assertEquals("Rice", checkOutSystem.getProductName());
     }
+    @Test
+    public void testThatProductTotalPriceCanBecalculated(){
+        checkOutSystem.setProductName("Rice");
+        checkOutSystem.setPrice(200.0);
+        checkOutSystem.setQuantity(5);
+
+        assertEquals(1000, checkOutSystem.getTotal());
+    }
+
 }

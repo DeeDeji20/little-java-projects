@@ -31,10 +31,7 @@ public class CheckOutSystem {
     }
 
     public double getTotal() {
-        return total;
+        return price * quantity;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
-    }
 }
