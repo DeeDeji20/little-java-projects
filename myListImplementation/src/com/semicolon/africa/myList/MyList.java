@@ -1,16 +1,24 @@
 package com.semicolon.africa.myList;
 
 public class MyList {
-    private int capacity;
+    private int capacity ;
     private int size;
-    private String[] items = new String[capacity];
+    private String[] items;
+
+    public MyList(int capacity) {
+        this.capacity = capacity;
+        items = new String[capacity];
+    }
 
     public void add(String item) {
-        if (capacity <= size) capacity= capacity+1 * 2;
+//        if (capacity <= size) capacity= capacity+1 * 2;
         for (int i = 0; i < items.length; i++) {
-//            System.out.println(items.length);
-            items[i] = item;
-            size++;
+            if (items[i] == null){
+                items[i] = item;
+                size++;
+                break;
+            }
+
         }
     }
 
@@ -21,6 +29,7 @@ public class MyList {
     public int capacity() {
         return capacity;
     }
+
 
     public int size() {
         return size;
