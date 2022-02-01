@@ -20,7 +20,7 @@ public class MyListTest {
     public void testThatItemsCanBeAddedtoList(){
         list.add("Rice");
         String[] items = list.viewItem();
-        assertArrayEquals(new String[]{"Rice"}, items);
+        assertArrayEquals(new String[]{"Rice"}, items)items.length;
     }
     @Test
     public void testToGetCapaitycOfArray(){
@@ -39,7 +39,7 @@ public class MyListTest {
         list.add("Beans");
 
 //        assertEquals(new String[]{"Rice", "Beans"}, list.viewItem());
-//        assertEquals(2, list.size());
-        assertEquals(2, list.capacity());
+        assertEquals(2, list.size());
+//        assertEquals(2, list.capacity());
     }
 }
