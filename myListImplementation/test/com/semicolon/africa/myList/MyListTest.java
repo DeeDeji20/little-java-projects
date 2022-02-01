@@ -29,7 +29,7 @@ public class MyListTest {
         list.add("Beads");
         list.add("eggs");
         String[] items = list.viewItem();
-        assertArrayEquals(new String[]{"sweet", "Beads", "eggs"}, items);
+        assertArrayEquals(new String[]{"sweet", "Beads", "eggs", null}, items);
     }
     @Test
     public void testToGetCapaitycOfArray(){

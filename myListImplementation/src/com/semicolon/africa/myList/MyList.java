@@ -19,6 +19,11 @@ public class MyList {
                 break;
             }
 
+            if (items[i] != null && capacity <= size){
+                items = new String[2 * capacity];
+                items[i] = item;
+                i++;
+            }
         }
     }
 
