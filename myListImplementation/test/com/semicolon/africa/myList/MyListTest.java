@@ -3,6 +3,8 @@ package com.semicolon.africa.myList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MyListTest {
@@ -31,24 +33,66 @@ public class MyListTest {
         String[] items = list.viewItem();
         assertArrayEquals(new String[]{"sweet", "Beads", "eggs", null}, items);
     }
+
+    @Test
+    public void testthatEvenMoreItemsCanBeAdded(){
+        list.add("sweet");
+        list.add("Beads");
+        list.add("eggs");
+        list.add("veg");
+        list.add("oil");
+        list.add("yam");
+        list.add("spag");
+        String[] items = list.viewItem();
+        assertArrayEquals(new String[]{"sweet", "Beads", "eggs", "veg", "oil", "yam", "spag", null}, items);
+    }
     @Test
     public void testToGetCapaitycOfArray(){
-        assertEquals(1, list.capacity());
+        assertEquals(2, list.capacity());
     }
 
+    @Test
+    public void getSize(){
+        list.add("Rice");
+        int size = list.size();
+        assertEquals(1, size);
+    }
+    @Test
+    public void testThatMoreItemsCanBeAddedtoList(){
+        list.add("Rice");
+        list.add("Beans");
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    public void testThatAnElementcanbeRemovedFromTheList(){
+        list.add("sweet");
+        list.add("Beads");
+        list.add("eggs");
+        list.add("veg");
+        list.add("oil");
+        list.add("yam");
+        list.add("spag");
+
+        list.remove("Beads");
+        String[] items = list.viewItem();
+        System.out.println(Arrays.toString(items));
+        assertArrayEquals(new String[]{"sweet", "eggs", "veg", "oil", "yam","spag", null, null}, items);
+
+    }
 //    @Test
-//    public void getSize(){
-//        list.add("Rice");
-//        int size = list.size();
-//        assertEquals(1, size);
-//    }
-//    @Test
-//    public void testThatMoreItemsCanBeAddedtoList(){
-//        list.add("Rice");
-//        list.add("Beans");
+//    public void testThatAnElementcanbeRemovedFromTheList2(){
+//        list.add("sweet");
+//        list.add("Beads");
+//        list.add("eggs");
+//        list.add("veg");
+//        list.add("oil");
+//        list.add("yam");
+//        list.add("spag");
 //
-////        assertEquals(new String[]{"Rice", "Beans"}, list.viewItem());
-//        assertEquals(2, list.size());
-////        assertEquals(2, list.capacity());
+//        list.remove("eggs");
+//        String[] items = list.viewItem();
+//        System.out.println(Arrays.toString(items));
+//        assertArrayEquals(new String[]{"sweet", "Beads", "veg", "oil", "yam","spag", null, null}, items);
 //    }
 }
