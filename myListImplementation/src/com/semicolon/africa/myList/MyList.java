@@ -1,5 +1,6 @@
 package com.semicolon.africa.myList;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class MyList {
@@ -31,7 +32,6 @@ public class MyList {
             newArray = new String[capacity];
             System.arraycopy(arr, 0, newArray, 0, arr.length);
             items = newArray;
-//                System.out.println(Arrays.toString(items));
         }
     }
 
@@ -50,33 +50,47 @@ public class MyList {
     public void remove(String element) {
         for (int i = 0; i < items.length; i++) {
             int j=0;
-            if (items[i] == element || i > j && i != items.length-1){
-//                System.out.println("hola "+items[i]);
-//                j=i;
-//                System.out.println(items[i]);
-//               items[i] = null;
-                String temp = items[i+1];
-                items[i] = temp;
-
-
+            if (items[i] == element){
+                items[i] = items[i+1];
+                for (int k = i; k < items.length-1; k++) {
+                    items[k] = items[k+1];
+                }
+                System.out.println(Arrays.toString(items));
                 size--;
             }
-//            if ( i > j && i != items.length-1){
-//                j=i;
-//                String temp = items[i+1];
-//                System.out.println(temp);
-//                System.out.println("hi "+items[i]);
-//
-//                items[i] = temp;
-//                System.out.println("hi "+items[i]);
-//
-////                System.out.println(items[i]);
-//                System.out.println();
-//                System.out.println();
-//            }
+        }
+    }
 
+    public String getElement(String element) {
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].equals(element))return items[i];
+
+        }
+        return null;
+    }
+
+    public String getElement(int index) {
+        for (int i = 0; i < items.length; i++) {
+            if (i == index) return items[i];
+        }
+        return null;
+    }
+
+    public void add(int index, String item) {
+        for (int i = 0; i < items.length; i++) {
+            if (i == index){
+                String temp = items[i];
+                String temp2 = items[i + 1];
+                for (int j = i; j < items.length-1; j++) {
+                    items[j] = item;
+                    items[j+1] = temp;
+                }
+//                items[i] = item;
+                size++;
+            }
         }
     }
 }
+
 
 
