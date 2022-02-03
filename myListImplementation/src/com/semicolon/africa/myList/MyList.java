@@ -36,6 +36,7 @@ public class MyList {
     }
 
     public String[] viewItem() {
+        System.out.println(Arrays.toString(items));
         return items;
     }
 
@@ -78,16 +79,23 @@ public class MyList {
 
     public void add(int index, String item) {
         for (int i = 0; i < items.length; i++) {
+//            System.out.println(items.length);
+            String temp = items[i];
             if (i == index){
-                String temp = items[i];
-                String temp2 = items[i + 1];
-                for (int j = i; j < items.length-1; j++) {
-                    items[j] = item;
-                    items[j+1] = temp;
-                }
-//                items[i] = item;
+//                temp = items[i];
+                    items[i] = item;
+                    items[i+1] = temp;
                 size++;
+//                continue;
+                break;
             }
+            for (int j = 0; j < i; j++) {
+                items[i] = temp;
+            }
+
+//            if (i > index){
+//                items[i] = temp;
+//            }
         }
     }
 }

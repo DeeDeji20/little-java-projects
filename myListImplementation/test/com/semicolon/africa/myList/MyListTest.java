@@ -127,6 +127,7 @@ public class MyListTest {
         list.add("Beads");
         list.add("eggs");
         list.add("veg");
+        list.add("sweet");
         list.add(2, "utensils");
         String[] items = list.viewItem();
         assertArrayEquals(new String[]{"sweet", "Beads","utensils", "eggs", "veg"}, items);
