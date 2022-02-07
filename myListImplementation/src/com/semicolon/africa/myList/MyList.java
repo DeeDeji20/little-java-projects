@@ -77,26 +77,38 @@ public class MyList {
         return null;
     }
 
-    public void add(int index, String item) {
-        for (int i = 0; i < items.length; i++) {
-//            System.out.println(items.length);
-            String temp = items[i];
-            if (i == index){
-//                temp = items[i];
-                    items[i] = item;
-                    items[i+1] = temp;
-                size++;
-//                continue;
-                break;
-            }
-            for (int j = 0; j < i; j++) {
-                items[i] = temp;
-            }
-
-//            if (i > index){
+//    public void add(int index, String item) {
+//        for (int i = 0; i < items.length; i++) {
+////            System.out.println(items.length);
+//            String temp = items[i];
+//            System.out.println(temp);
+//            if (i == index){
+////                temp = items[i];
+//                    items[i] = item;
+////                    items[i+1] = temp;
+//                size++;
+////                continue;
+////                break;
+//
+//                break;
+//            }
+//            for (int j = i; j < i+1; j++) {
 //                items[i] = temp;
 //            }
+//
+//
+////            if (i > index){
+////                items[i] = temp;
+////            }
+//        }
+//    }
+
+    public void add(int index, String item) {
+        for (int i = size; i > index; i--) {
+            items[i] = items[i-1];
         }
+        items[index] = item;
+        size++;
     }
 }
 

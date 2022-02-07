@@ -3,6 +3,8 @@ package com.semicolon.guitarStore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryTest {
@@ -19,6 +21,8 @@ class InventoryTest {
     public void testThatGuitarCanBeAddedToInventory(){
         inventory.addGuitar("123", 2.30, "rick", "v1230", "electric", "lotasWood", "otunbaWood");
         assertEquals(1, inventory.getGuitars().size());
+//        ArrayList<Guitar> guitars = ArrayList<>{};
+//        assertArrayEquals();
     }
 
     @Test
