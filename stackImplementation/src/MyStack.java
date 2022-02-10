@@ -11,8 +11,16 @@ public class MyStack {
 
     public void push(String element) {
         for (int i = 0; i < myStack.length; i++) {
-            myStack[i] = element;
-            count++;
+            if(myStack[i] == null){
+                myStack[i] = element;
+                count++;
+                break;
+            }
+
         }
+    }
+
+    public String[] viewStack() {
+        return myStack;
     }
 }

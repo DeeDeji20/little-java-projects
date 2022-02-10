@@ -22,4 +22,12 @@ public class StackTest {
             myStack.push("food");
             assertFalse(myStack.isEmpty());
         }
+
+    @Test
+    public void testThatAnElementCanBeCheckedStack() {
+        myStack.push("food");
+        myStack.push("clothes");
+        String[] actual = myStack.viewStack();
+        assertArrayEquals(new String[] {"food", "clothes", null, null, null}, actual);
+    }
 }
