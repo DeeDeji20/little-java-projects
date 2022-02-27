@@ -54,4 +54,8 @@ public class MyList {
         }
         count--;
     }
+
+    public int indexOf(int item) {
+        return item;
+    }
 }

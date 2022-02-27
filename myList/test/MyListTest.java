@@ -68,7 +68,18 @@ public class MyListTest {
         myList.insert(30);
         myList.insert(40);
         myList.removeAt(1);
+//        myList.print();
 
         assertEquals(3, myList.count());
+    }
+
+    @Test
+    void test_that_element_can_be_searched_for_at_an_index(){
+        myList.insert(10);
+        myList.insert(20);
+        myList.insert(30);
+        myList.insert(40);
+        int index = myList.indexOf(10);
+        assertEquals(0, index);
     }
 }
