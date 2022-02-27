@@ -56,6 +56,9 @@ public class MyList {
     }
 
     public int indexOf(int item) {
-        return item;
+        for (int i = 0; i < count; i++) {
+            if (items[i] == item) return i;
+        }
+        return -1;
     }
 }
