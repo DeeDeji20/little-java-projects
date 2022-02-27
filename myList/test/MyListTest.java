@@ -43,10 +43,7 @@ public class MyListTest {
     }
     @Test
     void test_that_when_array_is_full_array_is_resized(){
-        myList.insert(10);
-        myList.insert(20);
-        myList.insert(30);
-        myList.insert(40);
+        listOfItems();
         assertFalse(myList.isEmpty());
         assertEquals(6, myList.capacity());
         assertArrayEquals(new int[]{10, 20, 30, 40, 0, 0}, myList.print());
@@ -54,41 +51,34 @@ public class MyListTest {
 
     @Test
     void test_that_when_invlid_index_is_passed_throws_an_exception(){
-        myList.insert(10);
-        myList.insert(20);
-        myList.insert(30);
-        myList.insert(40);
+        listOfItems();
         assertThrows(IllegalArgumentException.class, ()->myList.removeAt(-1));
     }
 
     @Test
     void test_that_element_can_be_removed_at_an_index(){
-        myList.insert(10);
-        myList.insert(20);
-        myList.insert(30);
-        myList.insert(40);
-        myList.removeAt(1);
-//        myList.print();
+       listOfItems();
 
-        assertEquals(3, myList.count());
+        assertEquals(4, myList.count());
     }
 
     @Test
     void test_that_element_can_be_searched_for_at_an_index(){
-        myList.insert(10);
-        myList.insert(20);
-        myList.insert(30);
-        myList.insert(40);
+        listOfItems();
         int index = myList.indexOf(10);
         assertEquals(0, index);
     }
     @Test
     void test_that_if_element_not_found_returns_negative1(){
+        listOfItems();
+        int index = myList.indexOf(60);
+        assertEquals(-1, index);
+    }
+
+    private void listOfItems(){
         myList.insert(10);
         myList.insert(20);
         myList.insert(30);
         myList.insert(40);
-        int index = myList.indexOf(60);
-        assertEquals(-1, index);
     }
 }
