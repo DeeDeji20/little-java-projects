@@ -82,4 +82,13 @@ public class MyListTest {
         int index = myList.indexOf(10);
         assertEquals(0, index);
     }
+    @Test
+    void test_that_if_element_not_found_returns_negative1(){
+        myList.insert(10);
+        myList.insert(20);
+        myList.insert(30);
+        myList.insert(40);
+        int index = myList.indexOf(60);
+        assertEquals(-1, index);
+    }
 }
