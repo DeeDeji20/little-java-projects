@@ -52,6 +52,23 @@ public class MyListTest {
         assertArrayEquals(new int[]{10, 20, 30, 40, 0, 0}, myList.print());
     }
 
-//    @Test
-//    void test_that_element
+    @Test
+    void test_that_when_invlid_index_is_passed_throws_an_exception(){
+        myList.insert(10);
+        myList.insert(20);
+        myList.insert(30);
+        myList.insert(40);
+        assertThrows(IllegalArgumentException.class, ()->myList.removeAt(-1));
+    }
+
+    @Test
+    void test_that_element_can_be_removed_at_an_index(){
+        myList.insert(10);
+        myList.insert(20);
+        myList.insert(30);
+        myList.insert(40);
+        myList.removeAt(1);
+
+        assertEquals(3, myList.count());
+    }
 }

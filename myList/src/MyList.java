@@ -44,4 +44,14 @@ public class MyList {
     public int capacity() {
         return items.length;
     }
+
+    public void removeAt(int index) {
+        //valideate that indx exist
+        if (index <= 0 || index >= count) throw new IllegalArgumentException();
+        //shift items to fillthe hole
+        for (int i = index; i < count; i++) {
+            items[i] = items[i+1];
+        }
+        count--;
+    }
 }
