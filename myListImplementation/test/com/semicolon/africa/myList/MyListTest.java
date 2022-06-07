@@ -132,4 +132,16 @@ public class MyListTest {
         String[] items = list.viewItem();
         assertArrayEquals(new String[]{"sweet", "Beads","utensils", "eggs", "veg", "sweet", null, null}, items);
     }
+
+    @Test
+    void testThatAllEmemntsInTheArrayCanBeRetrieved(){
+        list.add("sweet");
+        list.add("Beads");
+        list.add("eggs");
+        list.add("veg");
+        list.add("sweet");
+        String[] items = list.viewItem();
+        assertArrayEquals(new String[]{"sweet", "Beads", "eggs", "veg", "sweet", null, null, null}, items);
+
+    }
 }

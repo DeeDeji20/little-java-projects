@@ -7,7 +7,6 @@ public class MyList {
     private int capacity;
     private int size;
     private String[] items;
-    private String[] newArray;
 
     public MyList(int capacity) {
         this.capacity = capacity;
@@ -29,14 +28,13 @@ public class MyList {
         if (capacity <= size){
             String[] arr = items;
             capacity *=2;
-            newArray = new String[capacity];
+            String[] newArray = new String[capacity];
             System.arraycopy(arr, 0, newArray, 0, arr.length);
             items = newArray;
         }
     }
 
     public String[] viewItem() {
-        System.out.println(Arrays.toString(items));
         return items;
     }
 
@@ -51,7 +49,7 @@ public class MyList {
     public void remove(String element) {
         for (int i = 0; i < items.length; i++) {
             int j=0;
-            if (items[i] == element){
+            if (Objects.equals(items[i], element)){
                 items[i] = items[i+1];
                 for (int k = i; k < items.length-1; k++) {
                     items[k] = items[k+1];
@@ -63,18 +61,14 @@ public class MyList {
     }
 
     public String getElement(String element) {
-        for (int i = 0; i < items.length; i++) {
-            if (items[i].equals(element))return items[i];
-
+        for (String item : items) {
+            if (item.equals(element)) return item;
         }
         return null;
     }
 
     public String getElement(int index) {
-        for (int i = 0; i < items.length; i++) {
-            if (i == index) return items[i];
-        }
-        return null;
+        return items[index];
     }
     public void add(int index, String item) {
         for (int i = size; i > index; i--) {
