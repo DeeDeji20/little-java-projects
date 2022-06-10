@@ -70,6 +70,7 @@ public class MyList {
     public String getElement(int index) {
         return items[index];
     }
+
     public void add(int index, String item) {
         for (int i = size; i > index; i--) {
             items[i] = items[i-1];
